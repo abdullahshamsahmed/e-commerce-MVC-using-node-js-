@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pdelete</title>
+</head>
+<body>
+	<h1>Product Delete</h1>  
+	<a href="/home">Back</a> |
+	<a href="/logout">logout</a>
+
+	<table width="300px" >
+		<tr>
+			<td width="35%">product Name:</td>
+			<td width="2%">:</td>
+			<td><%=pname%></td>
+		</tr>
+		
+		<tr>
+			<td>Brand</td>
+			<td width="2%">:</td>
+			<td><%=brand%></td>
+		</tr>
+        <tr>
+			<td>RAM</td>
+			<td width="2%">:</td>
+			<td><%=ram%></td>
+		</tr>
+		<tr>
+			<td>Storage</td>
+			<td width="2%">:</td>
+			<td><%=storage%></td>
+		</tr>
+		<tr>
+			<td>Monitor</td>
+			<td width="2%">:</td>
+			<td><%=monitor%></td>
+		</tr>
+		<tr>
+			<td>Disk-type</td>
+			<td width="2%">:</td>
+			<td><%=disktype%></td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td width="2%">:</td>
+			<td><%=price%></td>
+		</tr>
+		
+	</table>
+	<br><br>
+	<b>Are you sure? This can't be undone of you click confirm!</b>
+
+	<form method="post">
+			<input type="hidden" name="pid" value="<%=id%>"/>
+			<input type="submit" name="delete" value="Confirm"/>
+	</form>
+
+</body>
+</html>

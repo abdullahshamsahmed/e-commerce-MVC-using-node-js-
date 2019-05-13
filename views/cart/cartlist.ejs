@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cart List</title>
+</head>
+<body>
+	<h1> Cart List</h1>  
+	<a href="/ustart">Back</a> |
+	<a href="/logout">logout</a>
+
+	<br><br>
+
+	<table border="1" width="800px" >
+		<tr>
+			<th>Id</th>
+			<th>Product name</th>
+			<th>Brand</th>
+			<th>RAM</th>
+			<th>Storage</th>
+			<th>Monitor</th>
+			<th>Disktype</th>
+			<th>Price</th>
+			
+			<th>Action</th>
+			
+		</tr>
+		<% 
+        var total=0;
+        for(var i=0; i < uList.length; i++){ 
+            total+=uList[i].price;
+            %>
+        
+		<tr>
+			<td><%= uList[i].id %></td>
+			<td><%= uList[i].pname %></td>
+			<td><%= uList[i].brand %></td>
+			<td><%= uList[i].ram %></td>
+			<td><%= uList[i].storage %></td>
+			<td><%= uList[i].monitor %></td>
+			<td><%= uList[i].disktype %></td>
+			<td><%= uList[i].price %></td>
+			
+			<td>
+				 
+				<a href="/cart/cartdelete/<%=uList[i].id%>"> DELETE</a>
+				 
+			</td>
+		</tr>
+		<% } %>
+        <tr>
+            <h1>Total item: <%=uList.length%> and total price: <%=total%> taka.</h1>
+            
+        </tr>
+        
+	</table>
+    <table align="right" width="800px">
+        <tr>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+            <td><a href="/cart/thanks">Confirm Order</a></td>
+        </tr>
+    </table>
+     
+</body>
+</html>

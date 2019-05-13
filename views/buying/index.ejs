@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product List</title>
+</head>
+<body>
+	<h1><%=name%> ,Welcome to Product List</h1>  
+	<a href="/">Exit</a> |
+	<a href="/logout">logout</a>
+    <a href="./cart/cartlist">SEE add cart</a>
+
+	<br><br>
+
+	<table border="1" width="400px" >
+		<tr>
+			<th>Id</th>
+			<th>Product name</th>
+			<th>Brand</th>
+			
+			
+		
+			<th>Product Details</th>
+		</tr>
+		<% for(var i=0; i < uList.length; i++){ %>
+		<tr>
+			<td><%= uList[i].id %></td>
+			<td><%= uList[i].pname %></td>
+			<td><%= uList[i].brand %></td>
+			
+			
+			<td>
+				<a href="/cart/cartconfirm/<%=uList[i].id%>"> Show</a> 
+				
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>
